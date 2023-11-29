@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:background="@color/bg">
 
     <TextView
         android:id="@+id/textView"
@@ -58,5 +58,15 @@
         android:ems="15"
         android:inputType="text"
         android:hint="put your name" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/myButton"
+        style="@style/MyButtonStyle"
+        android:layout_below="@+id/name"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:text="let's go"
+        android:textColor="@color/white" />
+
 
 </RelativeLayout>
