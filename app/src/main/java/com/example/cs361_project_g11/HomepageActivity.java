@@ -20,8 +20,8 @@ public class HomepageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_homepage);
 
         Log.d("HomepageActivity", "onCreate");
-        View tap = findViewById(R.id.tap);
-        tap.setOnClickListener(new View.OnClickListener() {
+        View start_button = findViewById(R.id.start_button);
+        start_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomepageActivity.this, SetTimeActivity.class));
@@ -32,12 +32,12 @@ public class HomepageActivity extends AppCompatActivity {
         ImageView avatarImageView = findViewById(R.id.avatarImageView);
         TextView nameTextView = findViewById(R.id.nameTextView);
 
-        // Retrieve character information from SharedPreferences
+
         SharedPreferences preferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         String characterTitle = preferences.getString("selectedCharacterTitle", "Character Name");
         String enteredName = preferences.getString("enteredName", "Default Name");
 
-        // Populate card with character information
+
         avatarImageView.setImageResource(getImageResourceByTitle(characterTitle));
         nameTextView.setText(enteredName);
     }
