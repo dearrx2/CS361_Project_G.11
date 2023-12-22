@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bg1">
 
     <ImageView
         android:id="@+id/bg2"
         android:layout_width="0dp"
-        android:layout_height="350dp"
+        android:layout_height="400dp"
         android:alpha="0.5"
         android:background="@drawable/bg2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +30,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
-        android:id="@+id/workFocus"
+        android:id="@+id/focusText"
         android:layout_width="wrap_content"
         android:layout_height="56dp"
         android:layout_marginTop="36dp"
@@ -42,28 +42,76 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textFocus" />
 
+    <TextView
+        android:id="@+id/textSelectTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="36dp"
+        android:text="Select Time"
+        android:textColor="@color/text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/focusText" />
+
+    <EditText
+        android:id="@+id/timeHr"
+        android:layout_width="100dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginLeft="70dp"
+        android:ems="15"
+        android:hint="HR"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textSelectTime" />
+
+    <TextView
+        android:id="@+id/textViewdot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text=":"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toStartOf="@+id/timeMin"
+        app:layout_constraintStart_toEndOf="@+id/timeHr"
+        app:layout_constraintTop_toBottomOf="@id/textSelectTime" />
+
+    <EditText
+        android:id="@+id/timeMin"
+        android:layout_width="100dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginRight="70dp"
+        android:ems="15"
+        android:hint="MN"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textSelectTime" />
+
     <Button
         android:id="@+id/chooseTimeButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:backgroundTint="@android:color/holo_red_dark"
-        android:text="Select time"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"
+        android:text="Choose Time"
+        app:layout_constraintTop_toBottomOf="@+id/timeMin"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workFocus" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonFocus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
         android:backgroundTint="@color/buttonColor"
         android:text="Are you ready?"
-        android:layout_marginTop="36dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chooseTimeButton" />
-
+        app:layout_constraintTop_toBottomOf="@+id/textViewdot" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

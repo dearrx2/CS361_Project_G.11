@@ -1,57 +1,50 @@
+// SetTimeActivity.java
 package com.example.cs361_project_g11;
 
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.cs361_project_g11.R;
 
 import java.util.Calendar;
 
 public class SetTimeActivity extends AppCompatActivity {
 
-    private TextView selectedTimeTextView;
+    private EditText focusText;
+    private EditText timeHr;
+    private EditText timeMin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set_time);
 
-        selectedTimeTextView = findViewById(R.id.chooseTimeButton);
-        Button chooseTimeButton = findViewById(R.id.chooseTimeButton);
+        focusText = findViewById(R.id.focusText);
+        timeHr = findViewById(R.id.timeHr);
+        timeMin = findViewById(R.id.timeMin);
 
-        chooseTimeButton.setOnClickListener(new View.OnClickListener() {
+        Button buttonFocus = findViewById(R.id.buttonFocus);
+
+        buttonFocus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showTimePickerDialog();
+                // Get selected time and work focus
+                String selectedTime = timeHr.getText().toString() + ":" + timeMin.getText().toString();
+                String workFocus = focusText.getText().toString();
+
+                // Pass data to FocusActivity
+                Intent intent = new Intent(SetTimeActivity.this, FocusActivity.class);
+                intent.putExtra("SELECTED_TIME", selectedTime);
+                intent.putExtra("WORK_FOCUS", workFocus);
+                startActivity(intent);
             }
         });
-    }
-
-    private void showTimePickerDialog() {
-        final Calendar calendar = Calendar.getInstance();
-        int hour = calendar.get(Calendar.HOUR_OF_DAY);
-        int minute = calendar.get(Calendar.MINUTE);
-
-        TimePickerDialog timePickerDialog = new TimePickerDialog(
-                this,
-                new TimePickerDialog.OnTimeSetListener() {
-                    @Override
-                    public void onTimeSet(TimePicker timePicker, int selectedHour, int selectedMinute) {
-                        // Do something with the selected time
-                        String selectedTime = String.format("%02d:%02d", selectedHour, selectedMinute);
-                        selectedTimeTextView.setText(selectedTime);
-                    }
-                },
-                hour,
-                minute,
-                true);
-
-        timePickerDialog.show();
     }
 }

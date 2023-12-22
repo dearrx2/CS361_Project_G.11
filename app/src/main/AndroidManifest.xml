@@ -40,6 +40,10 @@
             android:name=".SetTimeActivity"
             android:exported="false">
         </activity>
+        <activity
+            android:name=".FocusActivity"
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>

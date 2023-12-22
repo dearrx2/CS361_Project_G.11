@@ -69,7 +69,7 @@ public class HomepageActivity extends AppCompatActivity {
             case "Image 12":
                 return R.drawable.character12;
             default:
-                return R.drawable.ic_launcher_foreground; // Default image
+                return R.drawable.ic_launcher_foreground;
         }
     }
 }
