@@ -5,22 +5,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/fortune_background"
+
     tools:context=".FortuneActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/imageView5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_gravity="center_horizontal|center_vertical"
+        android:layout_height="183dp"
+        android:layout_gravity="center|center_horizontal|center_vertical"
+        android:layout_margin="50dp"
+        android:layout_weight="1"
+        android:scaleType="center"
         android:src="@drawable/fortuneshake" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center_horizontal|center_vertical"
+        android:layout_margin="10dp"
+        android:layout_weight="1"
+        android:gravity="center"
         android:text="@string/fortune"
         android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
 </LinearLayout>
