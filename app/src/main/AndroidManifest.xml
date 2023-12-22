@@ -28,6 +28,10 @@
             android:name=".HomepageActivity"
             android:exported="false">
         </activity>
+        <activity
+            android:name=".SetTimeActivity"
+            android:exported="false">
+        </activity>
     </application>
 
 </manifest>

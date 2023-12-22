@@ -1,9 +1,11 @@
 package com.example.cs361_project_g11;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +20,13 @@ public class HomepageActivity extends AppCompatActivity {
         setContentView(R.layout.activity_homepage);
 
         Log.d("HomepageActivity", "onCreate");
+        View tap = findViewById(R.id.tap);
+        tap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomepageActivity.this, SetTimeActivity.class));
+            }
+        });
 
         CardView cardView = findViewById(R.id.cardView);
         ImageView avatarImageView = findViewById(R.id.avatarImageView);
