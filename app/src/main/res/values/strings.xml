@@ -1,5 +1,5 @@
 <resources>
     <string name="app_name">CS361_Project_G.11</string>
-    <string name="character_text1">Who are you</string>
-    <string name="character_text2">choose your characters</string>
+    <string name="greeting"><b>Hi</b> Artist!<b>\nFeels like you are ready for\nour journey.</b></string>
+
 </resources>

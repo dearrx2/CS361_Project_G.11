@@ -1,1 +1,46 @@
-/build
+# Compiled class files
+*.class
+
+# Log files
+*.log
+
+# Compiled Java bytecode
+*.jar
+
+# Compiled Java source files
+*.class
+
+# Eclipse project files
+.project
+.classpath
+.settings/
+
+# IntelliJ project files
+.idea/
+*.iml
+
+# NetBeans project files
+nb-configuration.xml
+
+# Gradle files
+.gradle/
+build/
+
+# Maven files
+target/
+
+# Mobile platform specific files (adjust based on your platform)
+# Android
+build/
+.gradle/
+local.properties
+/.idea/workspace.xml
+/.idea/libraries
+
+# iOS
+*.xcodeproj/
+*.xcworkspace/
+Pods/
+*.lock
+DerivedData/
+build/
